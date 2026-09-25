@@ -1,0 +1,126 @@
+{
+  "metadata": {
+    "name": "TCP Three-Way Handshake",
+    "slug": "tcp-three-way-handshake",
+    "description": "The sequence of SYN, SYN-ACK, and ACK packets exchanged between client and server to establish a TCP connection before any data is transmitted. A foundational coordination protocol of the internet, invisible to most participants but executed billions of times per day.",
+    "standpoint": "Application developer; observing the protocol from the layer above (socket API), not from the network layer where packets live.",
+    "lifecycle": "mature",
+    "scale": "atomic",
+    "tags": ["networking", "digital", "internet", "infrastructure"],
+    "related_protocols": []
+  },
+  "bicorder": {
+    "date": "2026-09-24",
+    "pass_type": "full",
+    "gradients": {
+      "explicit": {
+        "score": 9,
+        "notes": "Fully specified in RFC 793. No ambiguity about what constitutes the handshake."
+      },
+      "institutional": {
+        "score": 7,
+        "notes": "Governed by IETF RFCs — institutional in origin, though the institution is a consensus body."
+      },
+      "immutable": {
+        "score": 8,
+        "notes": "De facto immutable at the TCP level. TLS and QUIC layer on top rather than changing it."
+      },
+      "monocultural": {
+        "score": 8,
+        "notes": "Universal — same protocol regardless of who the client or server is."
+      },
+      "exclusive": {
+        "score": 2,
+        "notes": "Open to any device with a TCP/IP stack. Entry cost is technical, not social."
+      },
+      "hierarchical": {
+        "score": 3,
+        "notes": "Client initiates, server responds — slight asymmetry, but either party can close. Not strongly hierarchical."
+      },
+      "determined": {
+        "score": 9,
+        "notes": "Fully deterministic. Sequence numbers and state machine leave no room for interpretation."
+      },
+      "macro": {
+        "score": 2,
+        "notes": "Atomic interaction — a single connection setup, though it underlies systemic internet traffic."
+      },
+      "obligatory": {
+        "score": 9,
+        "notes": "Non-optional for TCP connections. Cannot skip or shortcut."
+      },
+      "symmetric": {
+        "score": 4,
+        "notes": "Client and server both send and receive, but the roles differ (initiator vs. listener)."
+      },
+      "voluntary": {
+        "score": 3,
+        "notes": "Once software initiates a TCP connection, the handshake is not optional. The developer chose TCP; the protocol takes over."
+      },
+      "agentic": {
+        "score": 1,
+        "notes": "Fully automated. No human action or judgment during execution."
+      },
+      "synchronous": {
+        "score": 7,
+        "notes": "Sequential state transitions, though network delays mean it is not instantaneous."
+      },
+      "legible": {
+        "score": 2,
+        "notes": "Invisible to end users and most application developers. Legible only to network engineers with packet captures."
+      },
+      "immediate": {
+        "score": 7,
+        "notes": "Completes in milliseconds under normal conditions."
+      },
+      "alive": {
+        "score": 9,
+        "notes": "Extremely alive — executed billions of times per second globally."
+      },
+      "smooth": {
+        "score": 9,
+        "notes": "Frictionless when working; failure modes (retransmit, timeout) are invisible to most users."
+      },
+      "pleasant": {
+        "score": 6,
+        "notes": "Neither pleasant nor unpleasant — simply invisible infrastructure."
+      },
+      "natural": {
+        "score": 3,
+        "notes": "Feels natural because it is invisible, but is entirely artificial and historically contingent."
+      },
+      "certain": {
+        "score": 8,
+        "notes": "High reliability under normal conditions; uncertainty arises only in degraded network environments."
+      },
+      "efficient": {
+        "score": 7,
+        "notes": "Three-packet overhead is considered minimal for its reliability guarantees, though QUIC reduces this further."
+      },
+      "exciting": {
+        "score": 1,
+        "notes": "The least exciting protocol imaginable. Its virtue is its invisibility."
+      },
+      "engaging": {
+        "score": 1,
+        "notes": "Zero participant engagement by design."
+      }
+    },
+    "analysis": {
+      "hardness": 5.6,
+      "polarized": 0.74,
+      "formal_informal": 0.82,
+      "usefulness": 7,
+      "usefulness_notes": "Useful for establishing baseline reference for what a 'hard' technical protocol looks like. The legibility gradient was the most revealing — it surfaces how protocol illegibility enables scale.",
+      "summary_bar": "Design     [========-] 8.0  Entanglement [====-----] 4.3  Experience [======---] 6.1"
+    }
+  },
+  "provenance": {
+    "submitted_by": "patrickatwater",
+    "submission_method": "llm-assisted",
+    "llm_model": "claude-sonnet-4-6",
+    "verified_by": "patrickatwater",
+    "verification_date": "2026-09-24",
+    "notes": "Reference example entry for the Protocol Institute registry. Used as the template illustration in SKILL.md."
+  }
+}

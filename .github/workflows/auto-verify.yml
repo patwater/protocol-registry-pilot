@@ -1,0 +1,144 @@
+name: Stamp Auto-Verification on Merge
+
+on:
+  pull_request:
+    types: [closed]
+    paths:
+      - 'protocols/**.json'
+
+jobs:
+  stamp-auto-verify:
+    name: Stamp verified_by on merge
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+
+    permissions:
+      contents: write
+      pull-requests: read
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Check PR body for human review checkbox
+        id: check_human
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+          PR_USER: ${{ github.event.pull_request.user.login }}
+        run: |
+          # The human review checkbox in the PR template:
+          # "- [x] ✅ I am a human reviewer..."
+          # We look for the checked version of that box.
+          if echo "$PR_BODY" | grep -q '\- \[x\] ✅ I am a human reviewer'; then
+            echo "human_verified=true" >> $GITHUB_OUTPUT
+            echo "reviewer=$PR_USER" >> $GITHUB_OUTPUT
+            echo "Human review checkbox was checked by $PR_USER"
+          else
+            echo "human_verified=false" >> $GITHUB_OUTPUT
+            echo "reviewer=auto" >> $GITHUB_OUTPUT
+            echo "No human review checkbox found — will stamp verified_by: auto"
+          fi
+
+      - name: Get changed protocol files from merged PR
+        id: changed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          FILES=$(gh pr view $PR_NUMBER --json files --jq '[.files[].path | select(startswith("protocols/") and endswith(".json") and (startswith("protocols/examples/") | not))] | join(" ")')
+          echo "files=$FILES" >> $GITHUB_OUTPUT
+          echo "Protocol files to stamp: $FILES"
+
+      - name: Stamp provenance fields
+        env:
+          HUMAN_VERIFIED: ${{ steps.check_human.outputs.human_verified }}
+          REVIEWER: ${{ steps.check_human.outputs.reviewer }}
+          TODAY: ${{ github.event.pull_request.merged_at }}
+          INPUT_FILES: ${{ steps.changed.outputs.files }}
+        run: |
+          python - <<'EOF'
+          import json
+          import os
+          import sys
+          from datetime import datetime
+
+          files_str = os.environ.get("INPUT_FILES", "").strip()
+          files = [f for f in files_str.split() if f]
+
+          human_verified = os.environ.get("HUMAN_VERIFIED", "false") == "true"
+          reviewer = os.environ.get("REVIEWER", "auto")
+          merged_at = os.environ.get("TODAY", "")
+
+          try:
+              verification_date = datetime.fromisoformat(merged_at.replace("Z", "+00:00")).strftime("%Y-%m-%d")
+          except Exception:
+              verification_date = datetime.utcnow().strftime("%Y-%m-%d")
+
+          if not files:
+              print("No protocol files to stamp.")
+              sys.exit(0)
+
+          changed = []
+          for filepath in files:
+              if not os.path.exists(filepath):
+                  print(f"Skipping {filepath} (not found on main — may have been deleted)")
+                  continue
+
+              with open(filepath, "r") as f:
+                  entry = json.load(f)
+
+              provenance = entry.get("provenance", {})
+              current_verified_by = provenance.get("verified_by", "auto")
+
+              if human_verified:
+                  # Human checked the box — stamp their GitHub username
+                  provenance["verified_by"] = reviewer
+                  provenance["verification_date"] = verification_date
+                  print(f"✅ Stamped {filepath} as human-verified by {reviewer}")
+              else:
+                  # No human review — stamp auto if not already human-verified
+                  if current_verified_by != "auto" and current_verified_by:
+                      print(f"ℹ️  {filepath} already has verified_by={current_verified_by}, leaving unchanged")
+                  else:
+                      provenance["verified_by"] = "auto"
+                      provenance["verification_date"] = verification_date
+                      print(f"🤖 Stamped {filepath} as auto-verified (no human review checkbox)")
+
+              entry["provenance"] = provenance
+
+              with open(filepath, "w") as f:
+                  json.dump(entry, f, indent=2)
+                  f.write("\n")
+
+              changed.append(filepath)
+
+          print(f"Stamped {len(changed)} file(s): {changed}")
+          EOF
+
+      - name: Commit provenance stamps
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add protocols/
+          if git diff --cached --quiet; then
+            echo "No changes to commit (all files already had provenance stamps)"
+          else
+            REVIEWER="${{ steps.check_human.outputs.reviewer }}"
+            HUMAN="${{ steps.check_human.outputs.human_verified }}"
+            if [ "$HUMAN" = "true" ]; then
+              MSG="chore: stamp verified_by=$REVIEWER on PR #${{ github.event.pull_request.number }}"
+            else
+              MSG="chore: stamp verified_by=auto on PR #${{ github.event.pull_request.number }} (no human review)"
+            fi
+            git commit -m "$MSG
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>"
+            git push
+          fi
