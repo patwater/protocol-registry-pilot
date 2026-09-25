@@ -1,0 +1,68 @@
+name: Validate Protocol Entry
+
+on:
+  pull_request:
+    paths:
+      - 'protocols/**.json'
+
+jobs:
+  validate:
+    name: Schema validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install jsonschema
+
+      - name: Find changed protocol files
+        id: changed
+        run: |
+          git fetch origin ${{ github.base_ref }}
+          CHANGED=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- 'protocols/*.json' | grep -v '^protocols/examples/' || true)
+          echo "files=$CHANGED" >> $GITHUB_OUTPUT
+          echo "Changed protocol files:"
+          echo "$CHANGED"
+
+      - name: Validate each changed file
+        run: |
+          FAILED=0
+          for FILE in ${{ steps.changed.outputs.files }}; do
+            echo "Validating $FILE..."
+            if python scripts/validate.py "$FILE"; then
+              echo "  ✅ $FILE passed"
+            else
+              echo "  ❌ $FILE failed"
+              FAILED=1
+            fi
+          done
+          exit $FAILED
+
+      - name: Check slug matches filename
+        run: |
+          FAILED=0
+          for FILE in ${{ steps.changed.outputs.files }}; do
+            FILENAME=$(basename "$FILE" .json)
+            SLUG=$(python -c "import json; d=json.load(open('$FILE')); print(d['metadata']['slug'])")
+            if [ "$FILENAME" != "$SLUG" ]; then
+              echo "❌ Slug mismatch in $FILE: filename='$FILENAME' but metadata.slug='$SLUG'"
+              FAILED=1
+            else
+              echo "✅ Slug matches filename: $FILENAME"
+            fi
+          done
+          exit $FAILED
+
+      - name: Check for example files in non-example path
+        run: |
+          for FILE in ${{ steps.changed.outputs.files }}; do
+            if echo "$FILE" | grep -q '^protocols/examples/'; then
+              echo "⚠️  Skipping example file: $FILE"
+            fi
+          done
+          echo "Non-example files validated."
