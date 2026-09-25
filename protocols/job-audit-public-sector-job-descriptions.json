@@ -1,0 +1,125 @@
+{
+  "metadata": {
+    "name": "Job Audit: Updating Job Descriptions in the Public Sector",
+    "slug": "job-audit-public-sector-job-descriptions",
+    "description": "The formal HR process by which public-sector organizations periodically review and reclassify job descriptions — a year-long bureaucratic ritual involving classification analysts, department managers, union stewards, and HR leadership, with employees as largely passive recipients of decisions made about them. The protocol is mature in the sense of being entrenched; its health is a different matter. Reclassification decisions are nominally technical but are experienced as opaque, arbitrary, and exhausting by nearly everyone involved.",
+    "standpoint": "Mid-level manager and participant-observer inside a public-sector bureaucracy undergoing a job audit; someone who has been both a reviewer and a reviewed.",
+    "lifecycle": "mature",
+    "scale": "meso",
+    "tags": ["organizational", "hr", "bureaucracy", "governance", "public-sector", "classification", "labor"],
+    "related_protocols": []
+  },
+  "bicorder": {
+    "date": "2026-09-25",
+    "pass_type": "full",
+    "gradients": {
+      "explicit": {
+        "score": 6,
+        "notes": "Partially explicit — there are official HR procedures, classification manuals, and union contract provisions — but significant informal norms and interpretive ambiguity govern real outcomes."
+      },
+      "institutional": {
+        "score": 8,
+        "notes": "Deeply institutional. Governed by civil service rules, collective bargaining agreements, and HR classification systems. Created and maintained by formal bureaucratic bodies."
+      },
+      "immutable": {
+        "score": 7,
+        "notes": "Very hard to change. Classification codes, pay grades, and the underlying logic of the audit are locked into civil service law and union contracts. Individual audits change job descriptions; the protocol itself rarely changes."
+      },
+      "monocultural": {
+        "score": 7,
+        "notes": "Assumes a single institutional frame — the HR classification logic — which erases departmental and role diversity in favor of cross-organizational comparability."
+      },
+      "exclusive": {
+        "score": 6,
+        "notes": "The process is nominally inclusive of employees, but meaningful participation is restricted to HR specialists and management. Employees are consulted but rarely empowered."
+      },
+      "hierarchical": {
+        "score": 8,
+        "notes": "Strongly hierarchical. HR and executive leadership control the classification decisions; managers provide input; employees have little structural power over their own reclassification."
+      },
+      "determined": {
+        "score": 4,
+        "notes": "Nominally determined, but job description language is deliberately vague to maintain managerial flexibility. The ambiguity is a feature the protocol preserves."
+      },
+      "macro": {
+        "score": 6,
+        "notes": "Meso to macro — affects the whole organization and links to systemwide pay structures, but each audit is an organizational rather than societal-level event."
+      },
+      "obligatory": {
+        "score": 7,
+        "notes": "Once triggered, participation is not optional. Employees whose positions are being audited must complete paperwork, submit to interviews, and accept whatever classification results."
+      },
+      "symmetric": {
+        "score": 2,
+        "notes": "Highly asymmetric. HR and management drive; employees receive. The power asymmetry is structural, not incidental."
+      },
+      "voluntary": {
+        "score": 2,
+        "notes": "Coerced — employees participate because they must, not because they chose to. Even managers participate under administrative mandate."
+      },
+      "agentic": {
+        "score": 4,
+        "notes": "Some active judgment required (completing paperwork, articulating job duties), but most of the consequential decisions happen above the employee's level."
+      },
+      "synchronous": {
+        "score": 2,
+        "notes": "Highly asynchronous — drawn out over months and years. Different stages have different participants on different timelines with little coordination."
+      },
+      "legible": {
+        "score": 3,
+        "notes": "Largely illegible to employees. Classification logic is arcane; outcomes feel arbitrary. Even HR analysts struggle to explain the underlying rationale for individual decisions."
+      },
+      "immediate": {
+        "score": 2,
+        "notes": "Deeply delayed. Year-long processes for decisions that nominally should take weeks. Delay is often strategic — it absorbs employee pressure without producing resolution."
+      },
+      "alive": {
+        "score": 6,
+        "notes": "Actively practiced but feels like it's dying under its own weight. Decrepit health — the protocol is alive in the sense of still running, not in the sense of vitality."
+      },
+      "smooth": {
+        "score": 2,
+        "notes": "Famously rough. Generates friction, delays, confusion, and resentment at nearly every step. The roughness is not accidental — it serves to wear down participants who might otherwise push harder."
+      },
+      "pleasant": {
+        "score": 2,
+        "notes": "Unpleasant for almost everyone involved. Produces anxiety in employees, frustration in managers, and demoralization in HR staff who know the system doesn't work."
+      },
+      "natural": {
+        "score": 2,
+        "notes": "Highly artificial. Almost no one involved believes this is how it should work. The protocol persists not because it is right but because it is entrenched."
+      },
+      "certain": {
+        "score": 3,
+        "notes": "Uncertain outcomes despite formal process. Reclassification decisions feel arbitrary and inconsistent across departments. The uncertainty is experienced as injustice."
+      },
+      "efficient": {
+        "score": 2,
+        "notes": "Deeply inefficient — a year-long process for outcomes that could be achieved in weeks if the institutional logic were simplified."
+      },
+      "exciting": {
+        "score": 1,
+        "notes": "The opposite of exciting. A protocol that produces dread and tedium in equal measure."
+      },
+      "engaging": {
+        "score": 2,
+        "notes": "Actively disengaging — a reliable route to employee cynicism and institutional distrust. Participation produces disengagement as a side effect."
+      }
+    },
+    "analysis": {
+      "hardness": 4.09,
+      "polarized": 0.58,
+      "formal_informal": 0.66,
+      "usefulness": 9,
+      "usefulness_notes": "Maximally revealing. The gap between 'institutional' (8) / 'hierarchical' (8) and Experience scores (mostly 2s) diagnoses late-stage bureaucratic rot: high structural formality, terrible participant experience. A canonical case for organizational studies of Design-vs-Experience divergence.",
+      "summary_bar": "Design     [======---] 6.5  Entanglement [===------] 3.4  Experience [==-------] 2.5"
+    }
+  },
+  "provenance": {
+    "submitted_by": "patrickatwater",
+    "submission_method": "llm-assisted",
+    "llm_model": "claude-sonnet-4-6",
+    "verified_by": "auto",
+    "notes": "Entry sourced from Protocol Watching DB (Notion). Selected as an example for 'Protocols for Business' — organizational governance, HR bureaucracy, and the health/dysfunction of mature institutional protocols."
+  }
+}

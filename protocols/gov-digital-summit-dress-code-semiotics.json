@@ -1,0 +1,125 @@
+{
+  "metadata": {
+    "name": "Gov Digital Summit Dress-Code Semiotics",
+    "slug": "gov-digital-summit-dress-code-semiotics",
+    "description": "The unspoken clothing protocol at government digital conferences and summits, where attire functions as tribal sorting: tech-sector attendees in hoodies and sneakers, government officials in blazers and lanyards, consultants occupying an anxious middle. No one wrote the rules; everyone reads the room. The protocol does invisible organizational storytelling, signaling institutional allegiance, authority, and in-group membership in real time.",
+    "standpoint": "Participant-observer; someone who has attended these summits from both the government and the tech side and noticed the semiotic dissonance.",
+    "lifecycle": "budding",
+    "scale": "meso",
+    "tags": ["organizational-culture", "signaling", "implicit", "dress-code", "government", "tech", "conferences"],
+    "related_protocols": []
+  },
+  "bicorder": {
+    "date": "2026-09-25",
+    "pass_type": "full",
+    "gradients": {
+      "explicit": {
+        "score": 1,
+        "notes": "Entirely implicit. No dress code exists or is communicated. The protocol operates through absorbed cultural norms, not instructions."
+      },
+      "institutional": {
+        "score": 2,
+        "notes": "Organic emergence from the collision of two distinct professional cultures (tech and government). No formal body governs it."
+      },
+      "immutable": {
+        "score": 3,
+        "notes": "Slowly mutable — the norms are evolving as remote work and hybrid culture blur dress codes — but cultural change is slow."
+      },
+      "monocultural": {
+        "score": 4,
+        "notes": "Each tribal subculture within the summit is relatively monocultural, but the protocol operates precisely by encoding multicultural collision."
+      },
+      "exclusive": {
+        "score": 6,
+        "notes": "Implicitly exclusive — wrong attire signals illegibility or non-membership, affecting who gets approached, trusted, or taken seriously."
+      },
+      "hierarchical": {
+        "score": 5,
+        "notes": "Mixed. Within government, hierarchy correlates with formality. Within tech, inverse often holds. The collision produces ambiguous status readings."
+      },
+      "determined": {
+        "score": 2,
+        "notes": "Highly open and interpretive. No rules, just vibes. Enormous room for individual expression and creative misreading."
+      },
+      "macro": {
+        "score": 5,
+        "notes": "Genuinely meso. Operates at the organizational/event scale, not systemic infrastructure but not atomic either."
+      },
+      "obligatory": {
+        "score": 5,
+        "notes": "Semi-obligatory. You cannot not dress — participating in the protocol is inescapable once you show up. But no one enforces it."
+      },
+      "symmetric": {
+        "score": 5,
+        "notes": "Everyone is simultaneously encoder and decoder. Roles are symmetric even though readings are uneven."
+      },
+      "voluntary": {
+        "score": 4,
+        "notes": "Mostly voluntary but social costs create soft coercion. Dressing 'wrong' has real professional legibility consequences."
+      },
+      "agentic": {
+        "score": 8,
+        "notes": "Highly agentic — every morning's dressing decision involves active, if often semiconscious, judgment about self-presentation and audience."
+      },
+      "synchronous": {
+        "score": 7,
+        "notes": "Synchronous — the protocol plays out in real-time, in-person encounter. The semiotic read is instantaneous upon visual contact."
+      },
+      "legible": {
+        "score": 3,
+        "notes": "Illegible to most participants — few could articulate the protocol even while they're executing it. The instrument surfaces what's invisible."
+      },
+      "immediate": {
+        "score": 8,
+        "notes": "Immediate — tribal sorting happens within seconds of visual contact, before anyone speaks."
+      },
+      "alive": {
+        "score": 7,
+        "notes": "Actively evolving as the government-tech collision deepens and remote/hybrid culture destabilizes dress norms across both sectors."
+      },
+      "smooth": {
+        "score": 6,
+        "notes": "Smooth within tribes, rough at the boundaries. The friction is precisely where the interesting organizational dynamics live."
+      },
+      "pleasant": {
+        "score": 5,
+        "notes": "Neutral to slightly pleasant within one's tribe; mildly uncomfortable when mis-coded or when navigating inter-tribal ambiguity."
+      },
+      "natural": {
+        "score": 4,
+        "notes": "Feels natural to participants embedded in their home culture; artificial and visible to anyone who sits at the intersection."
+      },
+      "certain": {
+        "score": 3,
+        "notes": "Uncertain — you never quite know how you're being read, especially in cross-cultural contexts. The ambiguity is productive and destabilizing."
+      },
+      "efficient": {
+        "score": 6,
+        "notes": "Efficient as a sorting mechanism — instant information transmission about tribal affiliation. Inefficient when it misfires and produces wrong reads."
+      },
+      "exciting": {
+        "score": 5,
+        "notes": "Exciting for those who take clothes seriously as communication; unremarkable background noise for others."
+      },
+      "engaging": {
+        "score": 6,
+        "notes": "Highly engaging whether participants know it or not. The protocol demands continuous, real-time participation simply by being present."
+      }
+    },
+    "analysis": {
+      "hardness": 4.78,
+      "polarized": 0.36,
+      "formal_informal": 0.13,
+      "usefulness": 8,
+      "usefulness_notes": "The bicorder is unusually revealing here. The gap between 'explicit' (1) and 'agentic' (8) surfaces the paradox: a fully implicit protocol still demands high active participation. The instrument surfaces exactly what makes this protocol interesting for organizational studies — it does real work while remaining invisible.",
+      "summary_bar": "Design     [===------] 3.5  Entanglement [=====----] 5.8  Experience [=====----] 5.3"
+    }
+  },
+  "provenance": {
+    "submitted_by": "patrickatwater",
+    "submission_method": "llm-assisted",
+    "llm_model": "claude-sonnet-4-6",
+    "verified_by": "auto",
+    "notes": "Entry sourced from Protocol Watching DB (Notion). Selected as an example for 'Protocols for Business' — organizational signaling and implicit cultural protocols."
+  }
+}
