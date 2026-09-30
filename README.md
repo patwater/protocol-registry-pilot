@@ -82,6 +82,7 @@ protocol-registry/
   protocols/               # one JSON file per protocol reading
     examples/              # reference examples (not community submissions)
       tcp-three-way-handshake.json
+      corporate-budget-cycle.json
   schema/
     protocol-entry.schema.json   # canonical JSON schema for entries
   scripts/

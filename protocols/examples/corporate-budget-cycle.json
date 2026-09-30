@@ -1,0 +1,131 @@
+{
+  "metadata": {
+    "name": "Corporate Budget Cycle",
+    "slug": "corporate-budget-cycle",
+    "description": "The recurring annual or quarterly process by which a company's business units request, negotiate, and receive funding allocations from a central finance function. It is fully codified as a calendar and paperwork process, yet the actual logic of who gets funded and why is almost entirely unwritten.",
+    "standpoint": "A business-unit manager submitting and defending a budget request inside a large hierarchical firm, observing the cycle from below the finance function that designs and adjudicates it.",
+    "lifecycle": "mature",
+    "scale": "meso",
+    "tags": [
+      "organizational",
+      "business",
+      "finance",
+      "governance",
+      "coordination"
+    ],
+    "related_protocols": []
+  },
+  "bicorder": {
+    "date": "2026-09-30",
+    "pass_type": "full",
+    "gradients": {
+      "explicit": {
+        "score": 5,
+        "notes": "The calendar, templates, and sign-off chain are fully codified in finance policy. What stays unwritten is the actual logic of who gets funded and why -- the gap Cicero's Protocol Symposium 2026 talk names, calling budget cycles a protocol that 'cannot be inspected, ported, versioned or delegated.'"
+      },
+      "institutional": {
+        "score": 9,
+        "notes": "Owned and administered by the finance function under board-level authority; not something any single manager can opt out of or redesign."
+      },
+      "immutable": {
+        "score": 6,
+        "notes": "The annual/quarterly cadence itself is very sticky and rarely redesigned. The line-item allocations inside it are renegotiated every single cycle."
+      },
+      "monocultural": {
+        "score": 7,
+        "notes": "Within a given firm, every unit runs the same template on the same calendar regardless of who they are -- deliberately uniform so results can be compared and rolled up."
+      },
+      "exclusive": {
+        "score": 6,
+        "notes": "Open in principle to any budget owner, but the room where trade-offs actually get decided is small: unit heads and above, not line staff."
+      },
+      "hierarchical": {
+        "score": 9,
+        "notes": "Requests flow up a chain of command for approval and cuts flow back down; Cicero's talk names hierarchy explicitly as 'an escalation and arbitration path,' and the budget cycle is where that path is exercised hardest."
+      },
+      "determined": {
+        "score": 5,
+        "notes": "The steps, forms, and deadlines are fixed, but the actual allocation outcome is a product of negotiation, storytelling, and political capital rather than a deterministic formula."
+      },
+      "macro": {
+        "score": 7,
+        "notes": "Sets resource allocation across an entire organization or division for the coming period, not a single bounded interaction."
+      },
+      "obligatory": {
+        "score": 9,
+        "notes": "No unit head can simply decline to submit a budget and keep their funding."
+      },
+      "symmetric": {
+        "score": 2,
+        "notes": "Sharply asymmetric: finance and senior leadership hold the approval power; unit managers are largely in a position of asking and justifying."
+      },
+      "voluntary": {
+        "score": 2,
+        "notes": "Participation is compelled by organizational role, not chosen; the only real discretion is in how a manager plays the negotiation, not whether they take part."
+      },
+      "agentic": {
+        "score": 8,
+        "notes": "Unlike an automated handshake, this runs almost entirely on human judgment -- prioritization, framing, and negotiation skill visibly change outcomes."
+      },
+      "synchronous": {
+        "score": 6,
+        "notes": "Drafting happens asynchronously across units, but the cycle is anchored to shared deadlines and review meetings that require simultaneous participation."
+      },
+      "legible": {
+        "score": 3,
+        "notes": "The procedural steps are visible, but the reasoning behind who actually gets funded stays opaque to most participants -- Cicero's line that the organization 'cannot be read, only attended' applies directly here."
+      },
+      "immediate": {
+        "score": 2,
+        "notes": "Resolution takes weeks to months across multiple negotiation rounds, not a single exchange."
+      },
+      "alive": {
+        "score": 9,
+        "notes": "Run by essentially every mid-size-and-larger organization, every year, without exception."
+      },
+      "smooth": {
+        "score": 2,
+        "notes": "Widely experienced as friction-heavy: resubmissions, late nights, and last-minute cuts are the norm, not the exception."
+      },
+      "pleasant": {
+        "score": 2,
+        "notes": "\"Budget season\" is a recognized period of organizational dread in most firms."
+      },
+      "natural": {
+        "score": 3,
+        "notes": "A calendar-imposed ritual rather than something that emerged organically from how the work itself gets done."
+      },
+      "certain": {
+        "score": 3,
+        "notes": "Outcomes swing on politics, macro conditions, and relative bargaining power from one cycle to the next."
+      },
+      "efficient": {
+        "score": 3,
+        "notes": "A frequent target of management critique (e.g. the Beyond Budgeting movement) for consuming disproportionate time relative to the value of the resulting plan."
+      },
+      "exciting": {
+        "score": 3,
+        "notes": "Mostly experienced as tedious administrative burden rather than a high-energy event, despite the real stakes involved."
+      },
+      "engaging": {
+        "score": 6,
+        "notes": "Participants are genuinely invested even when they resent the process, because career trajectory and team capacity are directly on the line."
+      }
+    },
+    "analysis": {
+      "hardness": 5.09,
+      "polarized": 0.57,
+      "formal_informal": 0.62,
+      "usefulness": 8,
+      "usefulness_notes": "Highly revealing as a contrast case to a hard technical protocol like the TCP handshake: symmetry, certainty, and legibility all land far toward the soft/illegible pole. It has participants, sequencing, and a settlement layer like any protocol, but being unwritten means it cannot be inspected, ported, or delegated the way TCP can.",
+      "summary_bar": "Design     [=======--] 6.8  Entanglement [=====----] 5.4  Experience [====-----] 3.6"
+    }
+  },
+  "provenance": {
+    "submitted_by": "patrickatwater",
+    "submission_method": "llm-assisted",
+    "llm_model": "claude-sonnet-5",
+    "verified_by": "auto",
+    "notes": "Grounded in Simone Cicero's Protocol Symposium 2026 talk 'A Common Protocol for Composable, Modular Organizations' (SIGPfB track), which names hierarchy and budget cycles as unwritten organizational protocols. Second reference example alongside the TCP handshake, illustrating a soft/social protocol. Pending Patrick's own review before being marked human-verified."
+  }
+}
